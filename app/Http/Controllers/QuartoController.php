@@ -4,29 +4,26 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class FuncionarioController extends Controller
+class QuartoController extends Controller
 {
    
     public function index()
     {
-        return view("cadFuncionario");
+        return view('quarto');
     }
 
-    
     public function create()
     {
-        return view("cadFuncionario");
-
+        //
     }
 
    
     public function store(Request $request)
     {
-        Funcionario::create($request->all());
-        return redirect(/);
+        //
     }
 
-   
+    
     public function show($id)
     {
         //

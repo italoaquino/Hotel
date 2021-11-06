@@ -14,7 +14,8 @@ class Quarto extends Model
     'reserva_hospede_id',
 ];
 
-public function reserva_hospede_id(){
-    return $this->belongsTo('reserva_hospede_id'); 
+public function reserva_hospede(){
+    return $this->belongsTo('App\Models\Reserva_hospede'); 
 }
+
 }

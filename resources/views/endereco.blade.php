@@ -88,21 +88,33 @@
 <section>
     <!--CADASTRO-->
     <div id="cadastro">
-          <form method="" action=""> 
+          <form method="POST" action="{{ route('endereco_store') }}">> 
 
-          @csrf
-            <div class="h1-cad">
-            <h1>Cadastro Hospede</h1> 
-            </div>
-                <label class= "cad-label" for="nome_cad" >Nome</label>
-              <input class= "cad-input" id="nome_cad" name="name" required="required" type="text" placeholder="nome">
-              <label class= "cad-label" for="sobrenome">identificacao</label>
-              <input class= "cad-input" type="text" id="sobrenome" required="required" name="identificacao" placeholder="identificacao">      
-            <br>
-            <br>
+            <p class="cad-p">Largadouro</p>
+
+            </fieldset>
+  
+            
+            <label class= "cad-label" for="Cidade" style="padding-left: 20px;">bairro</label>
+            <input class= "cad-input" type="text" id="Cidade" name="bairro" placeholder="Brasilia">
+            <label class= "cad-label" for="cep">Cep</label>
+            <input class= "cad-input" type="number" id="cep" name="cep" placeholder="00000-000">
+            </fieldset>
             <fieldset>
-            <button type="button" class="btn btn-primary btn-lg">Cancelar</button>
-            <button type="button" class="btn btn-secondary btn-lg">Cadastrar</button>
+                <label class= "cad-label" for="bairro">largadouro</label>
+                <input class= "cad-input" type="text" id="bairro" name="largadouro" placeholder="Planaltina">
+                <label class= "cad-label" for="bairro">Numero</label>
+                <input class= "cad-input" type="number" id="bairro" name="numero" placeholder="33894625">
+                <label class= "cad-label" for="complemento">complemento</label>
+                <input class= "cad-input" type="text" id="complemento" name="complemento" placeholder="Casa 50">
+            </fieldset>
+            <br>
+            <br>
+            <div class="testando">
+                
+         
+            <button type="submit" class="btn btn-primary btn-lg">Cancelar</button>
+            <button type="submit" class="btn btn-secondary btn-lg">Cadastrar</button>
             </fieldset>
         </form>
         </div>

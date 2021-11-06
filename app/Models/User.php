@@ -22,11 +22,10 @@ class User extends Authenticatable
         'hospede',
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array
-     */
+    public function Hospede(){
+        return $this->belongsTo("App\Models\Hospede");
+    }
+
     protected $hidden = [
         'password',
         'remember_token',

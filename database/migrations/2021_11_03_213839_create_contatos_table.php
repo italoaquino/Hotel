@@ -12,7 +12,6 @@ class CreateContatosTable extends Migration
         Schema::create('contatos', function (Blueprint $table) {
             $table->id();
             $table->string('numero');
-            $table->string('email');
             $table->enum('tipo', ['fixo', 'comercial', 'residencial']);
             $table->unsignedBigInteger('hospede_id');
             $table->timestamps();
