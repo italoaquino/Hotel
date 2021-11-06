@@ -13,12 +13,32 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/cadastroHospede', [App\Http\Controllers\HospedeController::class, 'index'])->name('hospede');
+Route::get('/cadastroFuncionario', [App\Http\Controllers\FuncionarioController::class, 'index'])->name('fuin');
+
+Route::get('/contato', [App\Http\Controllers\Contato::class, 'index'])->name('contato');
+
+Route::middleware('admin')->group(function(){
+
+Route::get('/admin',[HomeController::class,'admin'])->name('admin');
+
+});
+
+Route::middleware('atendente')->group(function(){
+
+Route::get('/atendente',[HomeController::class,'atendente'])->name('atendente');
+
+});
+
+Route::middleware('hospede')->group(function(){
+Route::get('/hospede',[HomeController::class,'hospede'])->name('hospede');
+});
+
+Route::get('/CadFuncionarios',[FuncionarioController::class,'funcionario'])->name('atendente');
 

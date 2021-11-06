@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <!-- Scripts -->
-   <script src="{{ asset('js/app.js') }}" defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
-    <title>Document</title>
 </head>
 <body>
-<div id="app">
+    <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -31,7 +35,8 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                    </ul>   
+
+                    </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -80,74 +85,31 @@
             @yield('content')
         </main>
     </div>
-    <section>
-<div class="row" id="contatti">
-<div class="container mt-5" >
+<section>
+    <!--CADASTRO-->
+    <div id="cadastro">
+          <form method="" action=""> 
 
-    <div class="row" style="height:500px;">
-      <div class="col-md-6 maps" >
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d983784.7024145657!2d-47.794420315589576!3d-15.596510455518699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3bcac8d26f99%3A0x46716d80308b6586!2sUNIP%20-%20Bras%C3%ADlia!5e0!3m2!1spt-BR!2sbr!4v1634470760672!5m2!1spt-BR!2sbr" width=530" height="520" style="border:0;" allowfullscreen="" loading="lazy"></iframe>  
-      </div>
-      <div class="col-md-6">
-        <h2 class="text-uppercase mt-3 font-weight-bold text-black">Contato</h2>
-        <form action="">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="form-group">
-                <input type="text" class="form-control mt-2" placeholder="Nome" required>
-              </div>
+          @csrf
+            <div class="h1-cad">
+            <h1>Cadastro Hospede</h1> 
             </div>
-            <div class="col-lg-6">
-              <div class="form-group">
-                <input type="text" class="form-control mt-2" placeholder="Sobrenome" required>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="form-group">
-                <input type="email" class="form-control mt-2" placeholder="Email" required>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="form-group">
-                <input type="number" class="form-control mt-2" placeholder="Telefone" required>
-              </div>
-            </div>
-            <div class="col-12">
-              <div class="form-group">
-                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Insira seu texto" rows="3" required></textarea>
-              </div>
-            </div>
-            <div class="col-12">
-            <div class="form-group">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-                <label class="form-check-label" for="invalidCheck2">
-                  Aceitar as condições
-
-                </label>
-              </div>
-            </div>
-            </div>
-            <div class="col-12">
-              <button class="btn btn-dark" type="submit">Enviar</button>
-            </div>
-          </div>
+                <label class= "cad-label" for="nome_cad" >Nome</label>
+              <input class= "cad-input" id="nome_cad" name="name" required="required" type="text" placeholder="nome">
+              <label class= "cad-label" for="sobrenome">identificacao</label>
+              <input class= "cad-input" type="text" id="sobrenome" required="required" name="identificacao" placeholder="identificacao">      
+            <br>
+            <br>
+            <fieldset>
+            <button type="button" class="btn btn-primary btn-lg">Cancelar</button>
+            <button type="button" class="btn btn-secondary btn-lg">Cadastrar</button>
+            </fieldset>
         </form>
-        <div class="text-black  ">
-        <h2 class="text-uppercase mt-4 font-weight-bold">Contatos</h2>
-
-        <i class="fas fa-phone mt-3"></i> <a href="tel:+">(+55)61 123456</a><br>
-        <i class="fas fa-phone mt-3"></i> <a href="tel:+">(+55)61 123456</a><br>
-        <i class="fa fa-envelope mt-3"></i> <a href="">hotelsolaris@gmail.com</a><br>
-        <a href=""><i class="fab fa-facebook fa-3x pr-4"></i></a>
-        <a href=""><i class="fab fa-linkedin fa-3x"></i></a>
-        </div>
         </div>
       </div>
-    </div>
-</div>
-</div>
+
 </section>
+
 <footer>
     <div class="footer">
       <div class="container">
@@ -190,5 +152,6 @@
     </div>
 
     </footer>
+
 </body>
 </html>

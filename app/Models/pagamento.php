@@ -19,4 +19,7 @@ class pagamento extends Model
         return $this->belongsTo('App\Models\Check_out');
     }
 
+    public function Funcionario(){
+        return $this->belongsTo('App\Models\Funcionario');
+    }
 }

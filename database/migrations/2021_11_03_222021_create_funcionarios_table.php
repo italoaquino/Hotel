@@ -12,6 +12,7 @@ class CreateFuncionariosTable extends Migration
         Schema::create('funcionarios', function (Blueprint $table) {
             $table->id();
             $table->string("identificacao");
+            $table->string("name");
             $table->unsignedBigInteger("check_in_id");
             $table->unsignedBigInteger("pagamento_id");
             $table->timestamps();
