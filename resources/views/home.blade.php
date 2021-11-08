@@ -41,7 +41,7 @@
                         <a class="nav-link" href="{{ route('login') }}">Sobre nós</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Quarto</a>
+                        <a class="nav-link" href="{{ route('quarto') }}">Quarto</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('contato') }}">Contato</a>

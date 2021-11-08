@@ -41,7 +41,7 @@
                         <a class="nav-link" href="{{ route('login') }}">Sobre nós</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Quarto</a>
+                        <a class="nav-link" href="{{ route('quarto') }}">Quarto</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('contato') }}">Contato</a>
@@ -96,7 +96,8 @@
     </div>
 
 
-<div class="container mt-5" >
+<div class= "contato">
+  <div class="container mt-5" >
     <div class="row" style="">
       <div class="col-md-6 maps" >
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d983784.7024145657!2d-47.794420315589576!3d-15.596510455518699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3bcac8d26f99%3A0x46716d80308b6586!2sUNIP%20-%20Bras%C3%ADlia!5e0!3m2!1spt-BR!2sbr!4v1634470760672!5m2!1spt-BR!2sbr" width=530" height="520" style="border:0;" allowfullscreen="" loading="lazy"></iframe>  
@@ -157,7 +158,8 @@
         </div>
         </div>
       </div>
-</div>
+    </div>
+  </div>
 </div>
 </section>
 <footer>
