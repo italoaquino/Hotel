@@ -11,6 +11,7 @@ class hospede extends Model
 
     protected $fillable = [
         'cpf',
+        'dataNasc',
         'user_id',
     ];
 

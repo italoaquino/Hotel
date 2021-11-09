@@ -3,21 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\hospede;
 
-class PerfilController extends Controller
+class DetalheController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function index()
     {
-            $user = auth()->user();
-            $id = $user->id;
-            $hospede=Hospede::findOrFail($id);
-            return view('pefil',['hospede'=>$hospede]);
+        return view('detalhes');
     }
 
     /**
@@ -41,13 +33,23 @@ class PerfilController extends Controller
         //
     }
 
-   
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function show($id)
     {
-        
+        //
     }
 
-
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function edit($id)
     {
         //

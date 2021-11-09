@@ -22,6 +22,7 @@ class EnderecoController extends Controller
     
     public function store(Request $request)
     {
+        
         endereco::create($request->all());
         return redirect('/home');
     }

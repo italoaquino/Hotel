@@ -12,6 +12,7 @@ class CreateHospedesTable extends Migration
         Schema::create('hospedes', function (Blueprint $table) {
             $table->id();
             $table->string('cpf');
+            $table->dateTime('dataNasc');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');       

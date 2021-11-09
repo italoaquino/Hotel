@@ -12,17 +12,16 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- Styles -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Red+Hat+Mono:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">    <title>Document</title>
 
 </head>
 <body>
-    <div id="app">
+<div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -35,12 +34,23 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
-                    </ul>
+                    </ul>   
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('login') }}">Sobre nós</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('quarto') }}">Quarto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('contato') }}">Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('login') }}">Reserva</a>
+                    </li>
+
                     @guest
                     
                     @if(Route::has('login'))
@@ -59,7 +69,8 @@
                     
                     @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                              
+                              <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
@@ -69,6 +80,7 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+                                    <a href="#" class="dropdown-item">Perfil</a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
@@ -85,6 +97,8 @@
             @yield('content')
         </main>
     </div>
+
+
 <section>
 
 
@@ -94,17 +108,19 @@
           <form method="post" action= "{{route('hospede_store')}}"> 
           @csrf
             <div class="h1-cad">
-            <h1>Informação Pessoal</h1> 
             </div>
-              <label class= "cad-label" for="cpf">CPF</label>
-              <input class= "cad-input" type="text" name="cpf" require="required" placeholder="0000000">
-              <label class= "cad-label" for="cpf">CPF</label>
-              <input class= "cad-input" type="text" name="cpf" require="required" placeholder="0000000">
-              <label class= "cad-label" for="cpf">CPF</label>
-              <input class= "cad-input" type="text" name="cpf" require="required" placeholder="0000000">
-              <label class= "cad-label" for="cpf">CPF</label>
-              <input class= "cad-input" type="text" name="cpf" require="required" placeholder="0000000">
-              <input type="submit"> 
+              <fieldset>
+                <label class= "cad-label" for="cpf">Cpf</label>
+
+                <input class= "cad-input" type="number" name="rg" require="required" placeholder="0000000">
+              </fieldset>
+              <fieldset>
+                <label class= "cad-label" for="cpf">Data de Nascimento</label>
+                <input class= "cad-input" type="date" name="dataNasc" require="required" placeholder="0000000">
+                
+                <input class="btn btn-outline-success" type="submit">   
+              </fieldset>
+              
           </form>
 </section>
 

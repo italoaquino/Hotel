@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Red+Hat+Mono:wght@600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet">
 </head>
 <body>
 <div id="app">
@@ -61,7 +62,8 @@
                     
                     @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                              
+                              <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
@@ -71,6 +73,7 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+                                    <a href="#" class="dropdown-item">Perfil</a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
@@ -91,7 +94,7 @@
     <div class="titleBar parbase aem-GridColumn aem-GridColumn--default--12">
     <div id="title-bar" class="titlebar"; style="margin-top:50px; text-align: center;">
         <div class="container clearfix">
-            <h1 id="formatar"; style="font-size: 50px;  font-family: serif;">Reserve na Solari's</h1>
+            <h1 id="formatar"; style="font-size: 50px;  font-family: 'Mochiy Pop One', sans-serif;">Reserve na Solari's</h1>
                 <div id="formatar"; style="font-size: 20px">
                     <span>Garantimos o melhor preço!</span>
                 </div>
@@ -120,7 +123,7 @@
                             <h1 id="formatar"; style="color: rgb(212, 184, 107); font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Quarto Royal</h1>
                             <p id="formatar"; style=" font-family: monospace; font-size:20px">Café da manhã / WI-FI / Hidro / Suíte</p>
                             <p id="formatar"; style=" font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 15px">A melhor experiência se encontra no Royal! Ideal para casais</p>
-                            <a class="btn btn-primary" style="background-color: rgb(236, 204, 115) "; role="button"; href="{{route ('login')}}">Reservar</a></a>
+                            <a href="{{ route('detalhe') }}" class="btn btn-warning">Alugar</a>
                         </div>
                 </div>
             </div>
@@ -140,7 +143,7 @@
                             <h1 id="formatar"; style="color: rgb(212, 184, 107); font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Suíte</h1>
                             <p id="formatar"; style=" font-family: monospace; font-size:20px">Café da manhã / WI-FI / Suíte </p>
                             <p id="formatar"; style=" font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 15px"> Qualidade e preço na medida certa!</p>
-                            <a class="btn btn-primary" style="background-color: rgb(236, 204, 115) " role="button"; href="{{route ('login')}}">Reservar</a></a>
+                            <a href="{{ route('detalhe') }}" class="btn btn-warning">Alugar</a>
                         </div>
                 </div>
             </div>
@@ -160,7 +163,7 @@
                             <h1 id="formatar"; style="color: rgb(212, 184, 107); font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Quarto Deluxe Premium</h1>
                             <p id="formatar"; style=" font-family: monospace; font-size:20px">Café da manhã / WI-FI / Hidro / Suíte </p>
                             <p id="formatar"; style=" font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 15px">Comodidade com uma área ainda maior. Para toda a família! </p>
-                            <a class="btn btn-primary" style="background-color: rgb(236, 204, 115) " role="button"; href="{{route ('login')}}">Reservar</a></a>
+                            <a href="{{ route('detalhe') }}" class="btn btn-warning">Alugar</a>
                         </div>
                 </div>
             </div>
@@ -179,8 +182,8 @@
                     <div id="text_foto">
                             <h1 id="formatar"; style="color: rgb(212, 184, 107); font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Quarto Deluxe</h1>
                             <p id="formatar"; style=" font-family: monospace; font-size:20px">Café da manhã / WI-FI / Hidro</p>
-                            <p id="formatar"; style=" font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 15px">Experimente o conforto e o grande espaço do quarto deluxe! Privacidade é o diferencial!</p>
-                            <a class="btn btn-primary" style="background-color: rgb(236, 204, 115) " role="button"; href="{{route ('login')}}">Reservar</a></a>
+                            <p id="formatar"; style=" font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 15px">Experimente o conforto e o grande espaço do quarto deluxe! </p>
+                            <a href="{{ route('detalhe') }}" class="btn btn-warning">Alugar</a>
                         </div>
                 </div>
             </div>

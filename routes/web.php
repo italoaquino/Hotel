@@ -12,7 +12,9 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::get('/inserir',[HospedeController::class,'create'])->name('hospede_inserir');
 Route::post('/hospede_store',[HospedeController::class,'store'])->name('hospede_store');
 Route::get('/reserva', [App\Http\Controllers\EstadiaController::class, 'index'])->name('estadia');
-Route::get('/perfil', [App\Http\Controllers\PerfilController::class, 'index'])->name('perfil');
+Route::get('/detalhe', [App\Http\Controllers\DetalheController::class, 'index'])->name('detalhe');
+
+Route::get('/perfil', [App\Http\Controllers\PerfilController::class, 'show'])->name('perfil');
 
 Route::get('/quarto', [App\Http\Controllers\QuartoController::class, 'index'])->name('quarto');
 
