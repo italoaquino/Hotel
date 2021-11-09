@@ -4,25 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class EnderecoController extends Controller
+class PerfilController extends Controller
 {
     
     public function index()
     {
-        return view('endereco');
+       return view('perfilController');
     }
 
-    
+  
     public function create()
     {
-        return view('endereco');
     }
 
     
     public function store(Request $request)
     {
-        Endereco::create($request->all());
-        return redirect('/');
+        //
     }
 
     /**

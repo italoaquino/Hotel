@@ -120,7 +120,7 @@
                             <h1 id="formatar"; style="color: rgb(212, 184, 107); font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Quarto Royal</h1>
                             <p id="formatar"; style=" font-family: monospace; font-size:20px">Café da manhã / WI-FI / Hidro / Suíte</p>
                             <p id="formatar"; style=" font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 15px">A melhor experiência se encontra no Royal! Ideal para casais</p>
-                            <a class="btn btn-primary" style="background-color: rgb(236, 204, 115) " href="#" role="button">Mais detalhes >>></a>
+                            <a class="btn btn-primary" style="background-color: rgb(236, 204, 115) "; role="button"; href="{{route ('login')}}">Reservar</a></a>
                         </div>
                 </div>
             </div>
@@ -140,7 +140,7 @@
                             <h1 id="formatar"; style="color: rgb(212, 184, 107); font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Suíte</h1>
                             <p id="formatar"; style=" font-family: monospace; font-size:20px">Café da manhã / WI-FI / Suíte </p>
                             <p id="formatar"; style=" font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 15px"> Qualidade e preço na medida certa!</p>
-                            <a class="btn btn-primary" style="background-color: rgb(236, 204, 115) " href="#" role="button">Mais detalhes >>></a>
+                            <a class="btn btn-primary" style="background-color: rgb(236, 204, 115) " role="button"; href="{{route ('login')}}">Reservar</a></a>
                         </div>
                 </div>
             </div>
@@ -160,7 +160,7 @@
                             <h1 id="formatar"; style="color: rgb(212, 184, 107); font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Quarto Deluxe Premium</h1>
                             <p id="formatar"; style=" font-family: monospace; font-size:20px">Café da manhã / WI-FI / Hidro / Suíte </p>
                             <p id="formatar"; style=" font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 15px">Comodidade com uma área ainda maior. Para toda a família! </p>
-                            <a class="btn btn-primary" style="background-color: rgb(236, 204, 115) " href="#" role="button">Mais detalhes >>></a>
+                            <a class="btn btn-primary" style="background-color: rgb(236, 204, 115) " role="button"; href="{{route ('login')}}">Reservar</a></a>
                         </div>
                 </div>
             </div>
@@ -180,7 +180,7 @@
                             <h1 id="formatar"; style="color: rgb(212, 184, 107); font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Quarto Deluxe</h1>
                             <p id="formatar"; style=" font-family: monospace; font-size:20px">Café da manhã / WI-FI / Hidro</p>
                             <p id="formatar"; style=" font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 15px">Experimente o conforto e o grande espaço do quarto deluxe! Privacidade é o diferencial!</p>
-                            <a class="btn btn-primary" style="background-color: rgb(236, 204, 115) " href="#" role="button">Mais detalhes >>></a>
+                            <a class="btn btn-primary" style="background-color: rgb(236, 204, 115) " role="button"; href="{{route ('login')}}">Reservar</a></a>
                         </div>
                 </div>
             </div>
@@ -190,6 +190,6 @@
     <div id="preco"; style="display: inline-block; height: 250px; border-radius: 5px;">
         <h1 id="formatar"; style="color: green";>R$ 150</h1>
     </div>
-    
+
 </body>
 </html>

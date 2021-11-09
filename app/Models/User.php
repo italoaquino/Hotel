@@ -20,6 +20,7 @@ class User extends Authenticatable
         'admin',
         'atendente',
         'hospede',
+
     ];
 
     public function Hospede(){

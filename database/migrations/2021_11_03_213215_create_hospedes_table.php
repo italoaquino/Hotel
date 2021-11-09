@@ -11,17 +11,10 @@ class CreateHospedesTable extends Migration
     {
         Schema::create('hospedes', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
-            $table->string('sobrenome');
-            $table->enum('sexo', ['masculino', 'feminino']);
             $table->string('cpf');
-            $table->date('data_nasc');
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('endereco_id');
             $table->timestamps();
-            $table->foreign('endereco_id')->references('id')->on('enderecos')->onDelete('cascade');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');       
         });
     }
 

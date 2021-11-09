@@ -14,11 +14,13 @@ class endereco extends Model
         'bairro',
         'largadouro',
         'complemento',
+        'cidade',
         'numero',
     ];
 
+ 
     public function Hospede(){
-        return$this->hasMany('App\Models\Hospede');
+        return $this->hasMany('App\Models\Hospede');
     }
 
 }

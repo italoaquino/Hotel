@@ -88,24 +88,25 @@
 <section>
     <!--CADASTRO-->
     <div id="cadastro">
-          <form method="POST" action="{{ route('endereco_store') }}">> 
-
+          <form method="POST" action="{{ route('endereco_store') }}">
+          @csrf
             <p class="cad-p">Largadouro</p>
 
             </fieldset>
   
-            
-            <label class= "cad-label" for="Cidade" style="padding-left: 20px;">bairro</label>
-            <input class= "cad-input" type="text" id="Cidade" name="bairro" placeholder="Brasilia">
+            <label class= "cad-label" for="Cidade" style="padding-left: 20px;">Cidade</label>
+            <input class= "cad-input" type="text" id="bairro" name="cidade" placeholder="Brasilia">
+            <label class= "cad-label" for="bairro" style="padding-left: 20px;">Bairro</label>
+            <input class= "cad-input" type="text" id="bairro" name="bairro" placeholder="Planaltina">
             <label class= "cad-label" for="cep">Cep</label>
             <input class= "cad-input" type="number" id="cep" name="cep" placeholder="00000-000">
             </fieldset>
             <fieldset>
-                <label class= "cad-label" for="bairro">largadouro</label>
+                <label class= "cad-label" for="bairro">Largadouro</label>
                 <input class= "cad-input" type="text" id="bairro" name="largadouro" placeholder="Planaltina">
-                <label class= "cad-label" for="bairro">Numero</label>
+                <label class= "cad-label" for="bairro">Número</label>
                 <input class= "cad-input" type="number" id="bairro" name="numero" placeholder="33894625">
-                <label class= "cad-label" for="complemento">complemento</label>
+                <label class= "cad-label" for="complemento">Complemento</label>
                 <input class= "cad-input" type="text" id="complemento" name="complemento" placeholder="Casa 50">
             </fieldset>
             <br>

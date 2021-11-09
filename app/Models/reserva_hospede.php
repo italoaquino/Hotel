@@ -11,7 +11,7 @@ class reserva_hospede extends Model
 
     protected $fillable = [
         'hospede_id',
-        'funcionario'
+        'funcionario',
         'valor',
         'tempo_reserva',
     ];

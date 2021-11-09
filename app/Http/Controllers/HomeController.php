@@ -11,21 +11,22 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
     }
-
-    
+             
     public function index()
     {
         return view('home');
     }
+
     public function admin(){
-        return'Yeahhh autenticado como admin';
+        return 'Yeahhh autenticado como admin';
     }
+
     public function atendente(){
-        return'Yeahh autenticado como atendente';
+        return 'Yeahh autenticado como atendente';
     }
 
     public function hospede(){
-        return'Yeah autenticado como hospede';
+        return 'Yeah autenticado como hospede';
     }
 
 }
