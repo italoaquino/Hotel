@@ -99,7 +99,8 @@
 
     <section class = "perfil-section">
 
-  <h1>{{$hospede->nome}}</h1><hr><p>RA:{{$hospede->user_id}}</p>
+  <h1><p>{{$hospede->nome}}</p></h1>
+  <h2><p>RA:{{$hospede->user_id}}</p></h2>
 
 
     </section>

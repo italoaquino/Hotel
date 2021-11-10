@@ -26,16 +26,22 @@ class HospedeController extends Controller
     public function store(Request $request)
     {
         $user = auth()->user();
-
         $hospede = new hospede;
         $hospede->cpf = $request->cpf;
+        $hospede->rg = $request->rg;
+        $hospede->cidade = $request->cidade;
+        $hospede->estado = $request->estado;
+        $hospede->endereco = $request->endereco;
+        $hospede->complemento = $request->complemento;
+        $hospede->tipo_num = $request->tipo_num;
+        $hospede->numero_tef = $request->numero_tef;
         $hospede->user_id= $user->id;
         $hospede->save();
         return redirect::to('/');
 
     }
 
-    
+      
     public function show($id)
     {
         //

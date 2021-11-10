@@ -104,24 +104,72 @@
 
 
     <!--CADASTRO-->
-    <div id="cadastro">
-          <form method="post" action= "{{route('hospede_store')}}"> 
-          @csrf
-            <div class="h1-cad">
-            </div>
-              <fieldset>
-                <label class= "cad-label" for="cpf">Cpf</label>
+    <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Pessoal') }}</div>
+                    <div class="card-body">
+                      <form method="POST" action="{{ route('endereco_store') }}">
+                        @csrf
 
-                <input class= "cad-input" type="number" name="rg" require="required" placeholder="0000000">
-              </fieldset>
-              <fieldset>
-                <label class= "cad-label" for="cpf">Data de Nascimento</label>
-                <input class= "cad-input" type="date" name="dataNasc" require="required" placeholder="0000000">
-                
-                <input class="btn btn-outline-success" type="submit">   
-              </fieldset>
-              
-          </form>
+                        <div class="form-group row">
+                            <label for="cpf" class="col-md-4 col-form-label text-md-right">Cpf</label>
+                            <div class="col-md-6">
+                                <input id="cpf" type="text" name="cpf">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="rg" class="col-md-4 col-form-label text-md-right">rg</label>
+                            <div class="col-md-6">
+                                <input id="rg" type="text" name="rg">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="cidade" class="col-md-4 col-form-label text-md-right">Cidade</label>
+                            <div class="col-md-6">
+                                <input id="cidade" type="text" name="cidade">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="estado" class="col-md-4 col-form-label text-md-right">Estado</label>
+                            <div class="col-md-6">
+                                <input id="estado" type="text" name="estado">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="endereco" class="col-md-4 col-form-label text-md-right">Endereco</label>
+                            <div class="col-md-6">
+                                <input id="endereco" type="text" name="endereco">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="complemento" class="col-md-4 col-form-label text-md-right">Complemento</label>
+                            <div class="col-md-6">
+                                <input id="complemento" type="text" name="complemento">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="tipo_num" class="col-md-4 col-form-label text-md-right">tipo</label>
+                            <div class="col-md-6">
+                                <input id="tipo_num" type="text" name="tipo_num">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="numero_tef" class="col-md-4 col-form-label text-md-right">numero</label>
+                            <div class="col-md-6">
+                                <input id="numero_tef" type="number" name="numero_tef">
+                            </div>
+                        </div>
+
+                          <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                  Registrar
+                                </button>
+                            </div>
+                        </div>
+                    </form>
 </section>
 
 <footer>

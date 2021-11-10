@@ -11,12 +11,19 @@ class hospede extends Model
 
     protected $fillable = [
         'cpf',
-        'dataNasc',
+        'rg',
+        'cidade',
+        'estado',
+        'endereco',
+        'complemento',
+        'tipo_num',
+        'numero_tef',
         'user_id',
     ];
-
+    
     public function User(){
-        return $this->belongsTo("App\Models\User");
+        return $this->belongsTo('App\Models\User');
     }
+
   
 }

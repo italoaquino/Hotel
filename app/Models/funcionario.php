@@ -12,7 +12,6 @@ class funcionario extends Model
     protected $fillable = [
         'identificacao',
         'check_in_id'
-        'pagamento_id',
         
     ];
 
