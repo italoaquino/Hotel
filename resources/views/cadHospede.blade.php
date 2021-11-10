@@ -116,49 +116,50 @@
                         <div class="form-group row">
                             <label for="cpf" class="col-md-4 col-form-label text-md-right">Cpf</label>
                             <div class="col-md-6">
-                                <input id="cpf" type="text" name="cpf">
+                                <input id="cpf" type="number" name="cpf" placeholder="000000000-00">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="rg" class="col-md-4 col-form-label text-md-right">rg</label>
+                            <label for="rg" class="col-md-4 col-form-label text-md-right">Rg</label>
                             <div class="col-md-6">
-                                <input id="rg" type="text" name="rg">
+                                <input id="rg" type="number" name="rg" placeholder="0000000">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="cidade" class="col-md-4 col-form-label text-md-right">Cidade</label>
                             <div class="col-md-6">
-                                <input id="cidade" type="text" name="cidade">
+                                <input id="cidade" type="text" name="cidade" placeholder="Brasília">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="estado" class="col-md-4 col-form-label text-md-right">Estado</label>
                             <div class="col-md-6">
-                                <input id="estado" type="text" name="estado">
+                                <input id="estado" type="text" name="estado" placeholder="Distrito Federal">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="endereco" class="col-md-4 col-form-label text-md-right">Endereco</label>
                             <div class="col-md-6">
-                                <input id="endereco" type="text" name="endereco">
+                                <input id="endereco" type="text" name="endereco" placeholder="Conjunto Residencial 50">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="complemento" class="col-md-4 col-form-label text-md-right">Complemento</label>
                             <div class="col-md-6">
-                                <input id="complemento" type="text" name="complemento">
+                                <input id="complemento" type="text" name="complemento" placeholder="Casa 02">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="tipo_num" class="col-md-4 col-form-label text-md-right">tipo</label>
                             <div class="col-md-6">
-                                <input id="tipo_num" type="text" name="tipo_num">
+                            <div class="col-md-6">
+                                <input id="tipo_num" type="text" name="tipo_num" placeholder="Casa 02">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="numero_tef" class="col-md-4 col-form-label text-md-right">numero</label>
+                            <label for="numero_tef" class="col-md-4 col-form-label text-md-right">NÚmero</label>
                             <div class="col-md-6">
-                                <input id="numero_tef" type="number" name="numero_tef">
+                                <input id="numero_tef" type="tel" name="numero_tef" placeholder="33894625">
                             </div>
                         </div>
 

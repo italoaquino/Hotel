@@ -7,9 +7,12 @@ use Illuminate\Http\Request;
 
 class AtendenteACL
 {
-   
-    if(auth()->check()&&auth()->user()->atendente){
-        return $next($request);
+    
+    public function handle(Request $request, Closure $next)
+    {
+        if(auth()->check() && auth()->user()->atendente){
+            return$next($request);
     }
-    dd('Sem acesso de atendente');
+        dd('Sem acesso de atendente');
+    }
 }
