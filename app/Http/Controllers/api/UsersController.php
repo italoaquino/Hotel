@@ -16,7 +16,7 @@ class UsersController extends Controller
 
     public function store(Request $request)
     {
-        User::create($request);
+        User::create($request->All());
     }
 
     public function show($id)
