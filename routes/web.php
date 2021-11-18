@@ -7,6 +7,9 @@ use App\Http\Controllers\HomeController;
 //auth
 Route::auth();
 
+
+
+
 //Views padrao
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/reserva', [App\Http\Controllers\EstadiaController::class, 'index'])->name('estadia');
