@@ -12,11 +12,12 @@ class CreateReservaHospedesTable extends Migration
         Schema::create('reserva_hospedes', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('hospede_id');
-            $table->unsignedBigInteger('funcionario_id');
             $table->double('valor');
-            $table->date('tempo_reserva');
+            $table->date('entrada');
+            $table->date('saida');
+            $table->integer('pessoas');
+            $table->timestamps();
             $table->foreign('hospede_id')->references('id')->on('hospedes')->onDelete('cascade');
-            $table->foreign('funcionario_id')->references('id')->on('funcionarios')->onDelete('cascade');
         });
     }
 

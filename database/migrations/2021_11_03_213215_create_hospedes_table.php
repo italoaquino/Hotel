@@ -13,15 +13,18 @@ class CreateHospedesTable extends Migration
             $table->id();
             $table->string('cpf');
             $table->string('rg');
-            $table->string('cidade');
             $table->string('estado');
+            $table->string('cidade');
+            $table->string('bairro');
             $table->string('endereco');
             $table->string('complemento');
-            $table->enum('tipo_num', ['fix', 'com', 'cel']);
-            $table->string('numero_tef');
+            $table->string('cep');
+            $table->string('numero');
+            $table->enum('tipo', ['fixo', 'comercial', 'residencial']);
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');       
+
         });
     }
 

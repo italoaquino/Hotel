@@ -11,6 +11,12 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
     <!-- Styles -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -21,7 +27,7 @@
 </head>
 <body>
 <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar fixed-top navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -38,7 +44,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Sobre nós</a>
+                        <a class="nav-link" href="{{ route('sobre') }}">Sobre nós</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('quarto') }}">Quarto</a>
@@ -47,7 +53,7 @@
                         <a class="nav-link" href="{{ route('contato') }}">Contato</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Reserva</a>
+                        <a class="nav-link" href="{{ route('reservas') }}">Reserva</a>
                     </li>
 
                     @guest
@@ -79,7 +85,7 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-                                    <a href="#" class="dropdown-item">Perfil</a>
+                                    <a href="{{ route('perfil') }}" class="dropdown-item">Perfil</a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
@@ -98,9 +104,7 @@
     </div>
 
 
-<section class="section-sobre">
-
- 
+<section class="section-sobre" style="margin-top: -20px !important;">
   <div class= "form-home">
     <h1 class= "home-h1"> Bem-Vindo ao Hotel Solari's</h1>
     <br>
@@ -121,9 +125,7 @@
   </div>
 </section>
 
-<section class="section-sobre2">
-  
-</section>
+
 
 
 <footer>
@@ -168,5 +170,6 @@
     </div>
 
     </footer>
-</body>
+   
+  </body>
 </html>

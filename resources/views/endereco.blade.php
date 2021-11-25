@@ -12,115 +12,77 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- Styles -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Red+Hat+Mono:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">    <title>Document</title>
 
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+@extends('layouts.app')
+@section('content')
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+<section style="padding-bottom: 100px !important;">
 
-                    </ul>
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                    @guest
-                    
-                    @if(Route::has('login'))
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{__('Login')}}</a>
-                    </li>
-                    @endif
 
-                    @if(Route::has('register'))
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}">{{__('Register')}}</a>
-
-                    </li>
-                    
-                    @endif
-                    
-                    @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
-<section>
     <!--CADASTRO-->
-    <div id="cadastro">
-          <form method="POST" action="{{ route('endereco_store') }}">
-          @csrf
-            <p class="cad-p">Largadouro</p>
+    <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Pessoal') }}</div>
+                    <div class="card-body">
+                      <form method="POST" action="{{ route('endereco_cadastro_store') }}">
+                        @csrf
 
-            </fieldset>
-  
-            <label class= "cad-label" for="Cidade" style="padding-left: 20px;">Cidade</label>
-            <input class= "cad-input" type="text" id="bairro" name="cidade" placeholder="Brasilia">
-            <label class= "cad-label" for="bairro" style="padding-left: 20px;">Bairro</label>
-            <input class= "cad-input" type="text" id="bairro" name="bairro" placeholder="Planaltina">
-            <label class= "cad-label" for="cep">Cep</label>
-            <input class= "cad-input" type="number" id="cep" name="cep" placeholder="00000-000">
-            </fieldset>
-            <fieldset>
-                <label class= "cad-label" for="bairro">Largadouro</label>
-                <input class= "cad-input" type="text" id="bairro" name="largadouro" placeholder="Planaltina">
-                <label class= "cad-label" for="bairro">Número</label>
-                <input class= "cad-input" type="number" id="bairro" name="numero" placeholder="33894625">
-                <label class= "cad-label" for="complemento">Complemento</label>
-                <input class= "cad-input" type="text" id="complemento" name="complemento" placeholder="Casa 50">
-            </fieldset>
-            <br>
-            <br>
-            <div class="testando">
-                
-         
-            <button type="submit" class="btn btn-primary btn-lg">Cancelar</button>
-            <button type="submit" class="btn btn-secondary btn-lg">Cadastrar</button>
-            </fieldset>
-        </form>
-        </div>
-      </div>
-
+                        <div class="form-group row">
+                            <label for="cpf" class="col-md-4 col-form-label text-md-right">Estado</label>
+                            <div class="col-md-6">
+                                <input id="cpf" type="text" name="estado" placeholder="Minas Gerais">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="rg" class="col-md-4 col-form-label text-md-right">Cidade</label>
+                            <div class="col-md-6">
+                                <input id="rg" type="text" name="cidade" placeholder="Belo Horizonte">
+                            </div>
+                        </div>
+ 
+                        <div class="form-group row">
+                            <label for="rg" class="col-md-4 col-form-label text-md-right">Bairro</label>
+                            <div class="col-md-6">
+                                <input id="rg" type="text" name="bairro" placeholder="Anchieta">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="rg" class="col-md-4 col-form-label text-md-right">Endereco</label>
+                            <div class="col-md-6">
+                                <input id="rg" type="text" name="endereco" placeholder="Rua 07">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="rg" class="col-md-4 col-form-label text-md-right">Complemento</label>
+                            <div class="col-md-6">
+                                <input id="rg" type="text" name="complemento" placeholder="Casa 50">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="rg" class="col-md-4 col-form-label text-md-right">Cep</label>
+                            <div class="col-md-6">
+                                <input id="rg" type="number" name="cep" placeholder="0000000">
+                            </div>
+                        </div>
+                          <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                  Registrar
+                                </button>
+                            </div>
+                        </div>
+                    </form>
 </section>
 
 <footer>
@@ -165,6 +127,6 @@
     </div>
 
     </footer>
-
+    @endsection
 </body>
 </html>

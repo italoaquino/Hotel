@@ -23,8 +23,12 @@ class User extends Authenticatable
 
     ];
 
-    public function Hospede(){
+    public function hospede(){
         return $this->belongsTo("App\Models\Hospede");
+    }
+
+    public function Funcionario(){
+        return $this->belongsTo("App\Models\Funcionario");
     }
 
     protected $hidden = [

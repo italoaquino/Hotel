@@ -11,19 +11,16 @@ class reserva_hospede extends Model
 
     protected $fillable = [
         'hospede_id',
-        'funcionario',
+        'entrada',
+        'saida',
         'valor',
-        'tempo_reserva',
+        'pessoas'
     ];
 
     public function Funcionario(){
         return $this->belongsTo("App\Models\Funcionario");
     }
 
-
-    public function Quarto(){
-        return $this->hasMany("App\Models\Quarto");
-    }
 
     public function Hospede(){
         return $this->belongsTo("App\Models\Hospede");

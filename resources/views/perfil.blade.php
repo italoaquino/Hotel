@@ -20,92 +20,163 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">    <title>Document</title>
 </head>
 <body>
-<div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+@extends('layouts.app')
+@section('content')
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-                    </ul>   
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Sobre nós</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('quarto') }}">Quarto</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('contato') }}">Contato</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Reserva</a>
-                    </li>
 
-                    @guest
-                    
-                    @if(Route::has('login'))
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{__('Login')}}</a>
-                    </li>
-                    @endif
 
-                    @if(Route::has('register'))
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}">{{__('Register')}}</a>
 
-                    </li>
-                    
-                    @endif
-                    
-                    @else
-                            <li class="nav-item dropdown">
-                              
-                              <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-                                    <a href="#" class="dropdown-item">Perfil</a>
+    <section class = "perfil-section" style="padding-top: 100px; height: 600px;">
+    <div class="container emp-profile">
+            <form method="post">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-img">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="profile-head">
+                            <h1>Perfil</h1>
+                                    <br>
+                                    <br>
+                                    <br>
+
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Sobre</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Endereço</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="{{ route('hospede_update') }}" class="btn btn-outline-secondary">Editar perfil</a>
                 </div>
-            </div>
-        </nav>
-
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
-
-    <section class = "perfil-section">
-
-  <h1><p>{{$hospede->nome}}</p></h1>
-  <h2><p>RA:{{$hospede->user_id}}</p></h2>
-
-
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-work"">
+                            <p></p>
+                            <a href="" style="display: none;">Website Link</a><br/>
+                            <a href="{{ route('reservas') }}" >Reserva</a><br/>
+                            <a href="" style="display: none;">Bootply Profile</a>
+                            <p style="display: none;">SKILLS</p>
+                            <a href="" style="display: none;">Web Designer</a><br/>
+                            <a href="" style="display: none;">Web Developer</a><br/>
+                            <a href="" style="display: none;">WordPress</a><br/>
+                            <a href="" style="display: none;">WooCommerce</a><br/>
+                            <a href=""style="display: none;">PHP, .Net</a><br/>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="tab-content profile-tab" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Nome</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                            <p>{{$hospede->user->name}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Email</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                            <p>{{$hospede->user->email}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Cpf</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{$hospede->cpf}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Telefone</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                            <p>{{$hospede->numero}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Tipo</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                            <p>{{$hospede->tipo}}</p>
+                                            </div>
+                                        </div>
+                                       
+                                       
+                            </div>
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Estado</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{$hospede->estado}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Cidade</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{$hospede->cidade}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Bairro</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{$hospede->bairro}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Cep</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{$hospede->cep}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Complemento</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{$hospede->complemento}}</p>
+                                            </div>
+                                     </div>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>           
+        </div>
     </section>
 
-   
+
+
+    
+
+
+
 
     <footer>
         <div class="footer">
@@ -149,5 +220,6 @@
         </div>
 
     </footer>
+    @endsection
 </body>
 </html>

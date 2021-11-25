@@ -12,18 +12,24 @@ class hospede extends Model
     protected $fillable = [
         'cpf',
         'rg',
-        'cidade',
+        'numero',
+        'tipo',
         'estado',
+        'cidade',
+        'bairro',
         'endereco',
         'complemento',
-        'tipo_num',
-        'numero_tef',
+        'cep',
         'user_id',
     ];
-    
-    public function User(){
+
+ 
+    public function user(){
         return $this->belongsTo('App\Models\User');
     }
 
+    public function Reserva_hospede(){
+        return $this->hasMany("App\Models\Reserva_hospede");
+    }
   
 }

@@ -26,8 +26,8 @@
 
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+<div id="app">
+        <nav class="navbar fixed-top navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -39,13 +39,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        
-                    </ul>
+                    </ul>   
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Sobre nós</a>
+                        <a class="nav-link" href="{{ route('sobre') }}">Sobre nós</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('quarto') }}">Quarto</a>
@@ -54,7 +53,7 @@
                         <a class="nav-link" href="{{ route('contato') }}">Contato</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Reserva</a>
+                        <a class="nav-link" href="{{ route('reservas') }}">Reserva</a>
                     </li>
 
                     @guest
@@ -74,28 +73,9 @@
                     @endif
                     
                     @else
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin') }}">Admin</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('atendente')}}">Atendente</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('hospede') }}">Hospede</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin') }}">Admin</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('atendente')}}">Atendente</a>
-                    </li>
-                    <li class="nav-item">
-                         <a class="nav-link" href="{{ route('hospede') }}">Hospede</a>
-                    </li>
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                              
+                              <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
@@ -105,6 +85,7 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+                                    <a href="{{ route('perfil') }}" class="dropdown-item">Perfil</a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
@@ -121,5 +102,6 @@
             @yield('content')
         </main>
     </div>
+
 </body>
 </html>

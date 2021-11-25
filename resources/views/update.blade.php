@@ -36,7 +36,7 @@
             <div class="card">
                 <div class="card-header">{{ __('Pessoal') }}</div>
                     <div class="card-body">
-                    <form method="POST" action="{{ route('cadastro_store') }}" class="row g-3">
+                    <form method="POST" action="{{ route('update_hospede') }}" class="row g-3">
                     @csrf   
                         <div class="col-md-4">
                             <label for="validationCustom01" class="form-label">CPF</label>

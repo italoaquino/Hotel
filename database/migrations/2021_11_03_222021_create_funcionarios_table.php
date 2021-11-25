@@ -12,12 +12,10 @@ class CreateFuncionariosTable extends Migration
         Schema::create('funcionarios', function (Blueprint $table) {
             $table->id();
             $table->string("identificacao");
-            $table->string("name");
-            $table->unsignedBigInteger("check_in_id");
-            $table->unsignedBigInteger("pagamento_id");
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
-            $table->foreign('pagamento_id')->references('id')->on('pagamentos')->onDelete('cascade');
-            $table->foreign('check_in_id')->references('id')->on('check_ins')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');       
+        
         });
     }
 

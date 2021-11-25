@@ -10,21 +10,21 @@ class PerfilController extends Controller
    
     public function index()
     {
-            $user = auth()->user();
-            $id = $user->id;
-            $hospede = Hospede::findOrFail($id);
-            return view('pefil',['hospede'=>$hospede]);
+        $user = auth()->user();
+        $id= $user->id;
+        $hospedes=hospede::findOrFail($id);
+        return view('perfil',['hospede'=>$hospedes]);
     }
 
     
-    public function create()
+    public function create(Request $request)
     {
-        //
+        
     }
 
     public function store(Request $request)
     {
-        //
+       
     }
 
    
@@ -34,15 +34,22 @@ class PerfilController extends Controller
     }
 
 
-    public function edit($id)
+    public function edit()
     {
-        //
+        $user = auth()->user();
+        $id= $user->id;
+        $hospede = hospede::findOrFail($id);
+        return view('update', ['hospede'=>$hospede]);
     }
 
    
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $user = auth()->user();
+        $id= $user->id;
+        $hospede = hospede::findOrFail($id);
+        $hospede->update($request->all());
+        return redirect('/perfil');
     }
 
    

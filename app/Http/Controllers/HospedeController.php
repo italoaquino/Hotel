@@ -12,7 +12,6 @@ class HospedeController extends Controller
    
     public function index()
     {
-        return view('cadHospede');
 
     }
 
@@ -29,12 +28,14 @@ class HospedeController extends Controller
         $hospede = new hospede;
         $hospede->cpf = $request->cpf;
         $hospede->rg = $request->rg;
-        $hospede->cidade = $request->cidade;
         $hospede->estado = $request->estado;
+        $hospede->cidade = $request->cidade;
+        $hospede->bairro = $request->bairro;
         $hospede->endereco = $request->endereco;
         $hospede->complemento = $request->complemento;
-        $hospede->tipo_num = $request->tipo_num;
-        $hospede->numero_tef = $request->numero_tef;
+        $hospede->cep = $request->cep;
+        $hospede->numero = $request->numero;
+        $hospede->tipo = $request->tipo;
         $hospede->user_id= $user->id;
         $hospede->save();
         return redirect::to('/');
